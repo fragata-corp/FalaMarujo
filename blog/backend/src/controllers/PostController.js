@@ -12,7 +12,15 @@ module.exports = {
   },
 
   async store(req, res) {
-    const post = await Post.create(req.params.id, req.body);
+    const author = req.params.id;
+    const data = req.body;
+    const post = await Post.create({
+      title: data.title,
+      description: data.description,
+      url: data.url,
+      avatar: data.avatar,
+      author
+    });
 
     return res.json(post);
   },

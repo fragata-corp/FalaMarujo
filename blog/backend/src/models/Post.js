@@ -18,12 +18,10 @@ const PostSchema = new Schema(
       type: String,
       required: true
     },
-    author: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "User"
-      }
-    ]
+    author: {
+      type: Schema.Types.ObjectId,
+      ref: "User"
+    }
   },
   {
     timestamps: true
