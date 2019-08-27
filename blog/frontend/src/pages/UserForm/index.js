@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Form, Input, Scope } from "unform";
 import * as Yup from "yup";
 import api from "../../services/api";
+import "./styles.css";
 
 const schema = Yup.object().shape({
   name: Yup.string().required("Nome obrigatório"),
