@@ -1,20 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import api from '../../services/api';
-
-// import { Container } from './styles';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import api from "../../services/api";
 
 export default function UserList() {
-  const [users, setUsers] = useState([])
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     async function loadUsers() {
-      const response = await api.get('/users');
+      const response = await api.get("/users");
 
       setUsers(response.data);
     }
 
-    loadUsers()
+    loadUsers();
   }, []);
 
   return (
@@ -31,7 +29,7 @@ export default function UserList() {
           </tr>
         </thead>
         <tbody>
-          { users.map(user => (
+          {users.map(user => (
             <tr key={user._id}>
               <td>{user.name}</td>
               <td>{user.email}</td>
@@ -41,7 +39,7 @@ export default function UserList() {
                 <Link to={`/users/edit/${user._id}`}>Editar</Link>
               </td>
             </tr>
-          )) }
+          ))}
         </tbody>
       </table>
     </>

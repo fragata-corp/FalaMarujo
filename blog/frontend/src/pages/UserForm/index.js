@@ -3,8 +3,6 @@ import { Form, Input, Scope } from "unform";
 import * as Yup from "yup";
 import api from "../../services/api";
 
-// import { Container } from './styles';
-
 const schema = Yup.object().shape({
   name: Yup.string().required("Nome obrigatório"),
   email: Yup.string(),
