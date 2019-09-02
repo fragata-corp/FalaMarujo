@@ -5,9 +5,12 @@
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.8.6",
+    "react-alert": "^5.5.0",
+    "react-alert-template-basic": "^1.0.0",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0",
+    "react-transition-group": "^4.2.2",
     "styled-components": "^4.2.0",
     "unform": "^1.2.3",
     "yup": "^0.27.0"

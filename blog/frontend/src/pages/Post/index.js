@@ -1,29 +1,26 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import api from "../../services/api";
 import "./styles.css";
 
-export default class Post extends Component {
-  state = {
-    product: {}
-  };
+export default function Post(props) {
+  const [post, setPost] = useState([]);
+  useEffect(() => {
+    _getPost(props.match.params.id);
+  }, [props.match.params.id]);
 
-  async componentDidMount() {
-    const { id } = this.props.match.params;
-    const response = await api.get(`/products/${id}`);
+  async function _getPost(id) {
+    const response = await api.get(`/posts/${id}`);
 
-    this.setState({ product: response.data });
+    setPost(response.data);
   }
-  render() {
-    const { product } = this.state;
 
-    return (
-      <div className="product-info">
-        <h1>{product.title}</h1>
-        <p>{product.description}</p>
-        <p>
-          URL: <a href={product.url}>{product.url}</a>
-        </p>
-      </div>
-    );
-  }
+  return (
+    <div className="product-info">
+      <h1>{post.title}</h1>
+      <p>{post.description}</p>
+      <p>
+        URL: <a href={post.url}>{post.url}</a>
+      </p>
+    </div>
+  );
 }
