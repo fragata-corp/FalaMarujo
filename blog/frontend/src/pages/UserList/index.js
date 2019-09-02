@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import api from "../../services/api";
+import Doca from "../Doca";
 import "./styles.css";
 
 export default function UserList() {
@@ -18,6 +19,7 @@ export default function UserList() {
 
   return (
     <>
+      <Doca />
       <Link to="/users/create">Criar usuário</Link>
       <table>
         <thead>

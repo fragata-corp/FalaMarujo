@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import PostList from "./pages/PostList";
 import Post from "./pages/Post";
 import Dashboard from "./pages/Dashboard";
+import Profile from "./pages/Profile";
 export default function Routes() {
   return (
     <BrowserRouter>
@@ -15,8 +16,10 @@ export default function Routes() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/dash" component={Dashboard} />
 
-        <Route exact path="/users" component={UserList} />
-        <Route exact path="/users/create" component={UserForm} />
+        <Route exact path="/user" component={UserList} />
+        <Route exact path="/user/:id" component={Profile} />
+
+        <Route exact path="/user/create" component={UserForm} />
         <Route exact path="/users/edit/:id" component={UserForm} />
 
         <Route exact path="/posts/list" component={PostList} />
