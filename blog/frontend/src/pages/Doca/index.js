@@ -16,8 +16,9 @@ export default function Doca() {
             <h1>CREATIVE TIM</h1>
           </header>
           <div>
+            <Link to="/user/profile">Perfil</Link>
             <Link to="/user">Usuários</Link>
-            <Link to="/user/profile">Profile</Link>
+            <Link to="/create/post">Novo Post</Link>
             <a href="/login" onClick={() => logout()}>
               Sair
             </a>
